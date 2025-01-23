@@ -1,7 +1,9 @@
 
 
+
 img{
     display: block;
+    height: 120px;
 }
 html{
     font-family: sans-serif;
@@ -25,10 +27,15 @@ main{
 }
 
 .flex{
+    
     display: flex;
     flex-wrap: wrap;
     /* justify-content: space-between; */
     gap: 5%;
+
+    height: 50%;
+    
+
 }
 
 .flex > div{
@@ -39,6 +46,8 @@ main{
     margin-block: 10px;
 
     color: white;
+
+
 
 }
 

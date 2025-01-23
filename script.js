@@ -36,3 +36,34 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+const teamContainer = document.querySelector('.flex')
+const teamContainerText = document.querySelector('.flex-column')
+
+
+
+function cicloAddMembers(){
+  for (let i = 1; i < teamMembers.length; i++) {
+    let element = teamMembers[i]
+  
+    teamContainer.innerHTML += `
+        <div class="flex">
+            <div class="flex">
+                <figure>
+                    <img src=${element.img} alt=${element.name}>
+                </figure>
+            </div>
+    <div class="flex flex-column">
+    <h5>${element.name}</h5>
+    <span>${element.email}</span>
+    <span>${element.role}</span>
+    </div>
+    
+    
+    `
+    
+  
+  }
+}
+
+cicloAddMembers()
