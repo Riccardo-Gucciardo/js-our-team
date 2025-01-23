@@ -43,7 +43,7 @@ const teamContainerText = document.querySelector('.flex-column')
 
 
 function cicloAddMembers(){
-  for (let i = 1; i < teamMembers.length; i++) {
+  for (let i = 0; i < teamMembers.length; i++) {
     let element = teamMembers[i]
   
     teamContainer.innerHTML += `
@@ -58,8 +58,6 @@ function cicloAddMembers(){
     <span>${element.email}</span>
     <span>${element.role}</span>
     </div>
-    
-    
     `
     
   
@@ -67,3 +65,41 @@ function cicloAddMembers(){
 }
 
 cicloAddMembers()
+
+const btn = document.getElementById('btn')
+
+btn.addEventListener('click', function (event) {
+  event.preventDefault()
+  const name = document.getElementById('name').value
+  const role = document.getElementById('role').value
+  const image = document.getElementById('image').value
+  const email = document.getElementById('email').value
+
+teamMembers.push(
+    {
+      name,
+      role,
+      image,
+      email
+    }
+  )
+
+  console.log( teamMembers )
+
+  teamContainer.innerHTML += `
+  <div class="flex">
+      <div class="flex">
+          <figure>
+              <img src=${image} alt=${name}>
+          </figure>
+      </div>
+<div class="flex flex-column">
+<h5>${name}</h5>
+<span>${email}</span>
+<span>${role}</span>
+</div>
+
+`
+ 
+
+})
